@@ -1,0 +1,28 @@
+{
+  "_comment": [
+    "Optional reputation feed merged into the built-in indicator set at startup.",
+    "Point MG_FEED_PATH at a copy of this file to extend detection without a code change.",
+    "Domains are matched as suffixes, so 'example.com' also covers 'pool.example.com'."
+  ],
+  "pool_domains": [
+    "pool.internal-example.net"
+  ],
+  "cryptojacking_domains": [
+    "miner.cdn-example.io"
+  ],
+  "miner_binaries": [
+    "definitely_not_a_miner"
+  ],
+  "bad_ips": [
+    "45.9.148.37",
+    "185.244.25.0/24"
+  ],
+  "allowlist_processes": [
+    "our-internal-render-farm"
+  ],
+  "allowlist_domains": [
+    "build-cache.corp.example.com"
+  ]
+}
+
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MiningGuard</title>
+<link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark"></span>
+    <h1>MiningGuard</h1>
+    <span class="brand-sub">cryptomining detection</span>
+  </div>
+  <div class="topbar-actions">
+    <span id="last-updated" class="muted"></span>
+    <label class="toggle">
+      <input type="checkbox" id="auto-refresh" checked />
+      <span>Auto refresh</span>
+    </label>
+    <button id="refresh" class="btn">Refresh</button>
+  </div>
+</header>
+
+<main>
+  <section class="stats" id="stats"></section>
+
+  <div class="columns">
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Monitored hosts</h2>
+        <span class="muted" id="host-count"></span>
+      </div>
+      <table class="grid" id="hosts-table">
+        <thead>
+          <tr>
+            <th>Host</th>
+            <th>OS</th>
+            <th>Address</th>
+            <th class="num">Risk</th>
+            <th>Severity</th>
+            <th class="num">Alerts</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p class="empty" id="hosts-empty" hidden>
+        No hosts reporting yet. Run <code>python -m miningguard seed-demo</code> for sample data
+        or <code>python -m miningguard collect</code> to report this machine.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Alert queue</h2>
+        <span class="muted" id="alert-count"></span>
+      </div>
+      <div id="alerts-list" class="alerts"></div>
+      <p class="empty" id="alerts-empty" hidden>No open alerts.</p>
+    </section>
+  </div>
+
+  <section class="panel" id="detail-panel" hidden>
+    <div class="panel-head">
+      <h2 id="detail-title">Host detail</h2>
+      <button class="btn btn-ghost" id="detail-close">Close</button>
+    </div>
+    <div id="detail-body"></div>
+  </section>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
+
+
